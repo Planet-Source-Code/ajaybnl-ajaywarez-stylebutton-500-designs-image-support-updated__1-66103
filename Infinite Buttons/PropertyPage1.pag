@@ -1,0 +1,598 @@
+VERSION 5.00
+Begin VB.PropertyPage shtStyles 
+   Caption         =   "General"
+   ClientHeight    =   5580
+   ClientLeft      =   0
+   ClientTop       =   0
+   ClientWidth     =   7020
+   PaletteMode     =   0  'Halftone
+   ScaleHeight     =   5580
+   ScaleWidth      =   7020
+   Begin VB.PictureBox Picture1 
+      AutoRedraw      =   -1  'True
+      AutoSize        =   -1  'True
+      BorderStyle     =   0  'None
+      Height          =   255
+      Left            =   1920
+      ScaleHeight     =   255
+      ScaleWidth      =   735
+      TabIndex        =   12
+      Top             =   1920
+      Visible         =   0   'False
+      Width           =   735
+   End
+   Begin VB.Timer Timer1 
+      Interval        =   100
+      Left            =   6600
+      Top             =   5160
+   End
+   Begin VB.FileListBox File1 
+      Appearance      =   0  'Flat
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   1005
+      Left            =   120
+      Pattern         =   "*.xbn"
+      TabIndex        =   0
+      Top             =   840
+      Width           =   6735
+   End
+   Begin VB.TextBox Text1 
+      Appearance      =   0  'Flat
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   285
+      Left            =   120
+      TabIndex        =   4
+      TabStop         =   0   'False
+      Text            =   "C:\Program Files\XP Web Buttons\themes"
+      Top             =   240
+      Width           =   6735
+   End
+   Begin VB.PictureBox Picture3 
+      Appearance      =   0  'Flat
+      BorderStyle     =   0  'None
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H80000008&
+      Height          =   3135
+      Left            =   135
+      ScaleHeight     =   3135
+      ScaleWidth      =   6720
+      TabIndex        =   1
+      TabStop         =   0   'False
+      Top             =   2280
+      Width           =   6720
+      Begin VB.PictureBox Picture2 
+         BorderStyle     =   0  'None
+         Height          =   3075
+         Left            =   0
+         ScaleHeight     =   3075
+         ScaleWidth      =   6375
+         TabIndex        =   3
+         TabStop         =   0   'False
+         Top             =   0
+         Width           =   6375
+         Begin VB.PictureBox Tmppic 
+            AutoRedraw      =   -1  'True
+            AutoSize        =   -1  'True
+            BorderStyle     =   0  'None
+            Height          =   375
+            Left            =   4440
+            ScaleHeight     =   375
+            ScaleWidth      =   495
+            TabIndex        =   11
+            Top             =   120
+            Visible         =   0   'False
+            Width           =   495
+         End
+         Begin VB.PictureBox State3 
+            Appearance      =   0  'Flat
+            BackColor       =   &H80000005&
+            BorderStyle     =   0  'None
+            ForeColor       =   &H80000008&
+            Height          =   300
+            Index           =   0
+            Left            =   3000
+            ScaleHeight     =   300
+            ScaleWidth      =   1335
+            TabIndex        =   10
+            TabStop         =   0   'False
+            Top             =   120
+            Visible         =   0   'False
+            Width           =   1335
+         End
+         Begin VB.PictureBox State2 
+            Appearance      =   0  'Flat
+            BackColor       =   &H80000005&
+            BorderStyle     =   0  'None
+            ForeColor       =   &H80000008&
+            Height          =   300
+            Index           =   0
+            Left            =   1560
+            ScaleHeight     =   300
+            ScaleWidth      =   1335
+            TabIndex        =   9
+            TabStop         =   0   'False
+            Top             =   120
+            Visible         =   0   'False
+            Width           =   1335
+         End
+         Begin VB.PictureBox State1 
+            Appearance      =   0  'Flat
+            BackColor       =   &H80000005&
+            BorderStyle     =   0  'None
+            ForeColor       =   &H80000008&
+            Height          =   300
+            Index           =   0
+            Left            =   120
+            ScaleHeight     =   300
+            ScaleWidth      =   1335
+            TabIndex        =   8
+            TabStop         =   0   'False
+            Top             =   120
+            Visible         =   0   'False
+            Width           =   1335
+         End
+      End
+      Begin VB.VScrollBar VScroll1 
+         Height          =   3030
+         LargeChange     =   1000
+         Left            =   6405
+         SmallChange     =   100
+         TabIndex        =   2
+         TabStop         =   0   'False
+         Top             =   0
+         Width           =   255
+      End
+   End
+   Begin VB.Label Label2 
+      Caption         =   "Styles Path : (Loads *.Xbn Styles)"
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   255
+      Left            =   120
+      TabIndex        =   7
+      Top             =   0
+      Width           =   4935
+   End
+   Begin VB.Label Label1 
+      Caption         =   "Select Theme Type :"
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   255
+      Left            =   120
+      TabIndex        =   6
+      Top             =   600
+      Width           =   4695
+   End
+   Begin VB.Label Label6 
+      AutoSize        =   -1  'True
+      Caption         =   "Buttons Preview / Test :"
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   195
+      Left            =   120
+      TabIndex        =   5
+      Top             =   2040
+      Width           =   1740
+   End
+End
+Attribute VB_Name = "shtStyles"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+'Warning : This code is Free to Use . You Must Give Author Name and Email While Using .
+'Author : Ajay Kumar
+'Email : ajaybnl@gmail.com
+
+Option Explicit
+Private destWidth                 As Long    'Button Width'
+Private destHeight                As Long    'Button Height
+Private xSection               As Long    '
+Private ySection               As Long
+
+Private strPrevLoadedFile      As String
+Private LastFocus As Long
+Private Skinimages()             As StdPicture
+
+
+' Print Methord ':( Move Comment inside Sub/Function/Property
+Private Sub Check1_Click()
+    LoadButtons
+End Sub
+
+
+
+Private Sub DrawPicture(ByVal N As Long, _
+                        Obj As PictureBox)
+    'Debug.Print tmp_pic.Width & " " & tmp_pic.Height
+    
+    xSection = lngX(N) * 15
+    ySection = lngY(N) * 15
+    
+    'Resize on First Call
+    If N = 1 Then
+    destHeight = Obj.Height
+    destWidth = Obj.Width
+    Picture1.Width = destWidth
+    Picture1.Height = destHeight
+    End If
+    
+    Picture1.Cls
+    RenderButton Skinimages(N), Picture1.hDC, xSection, ySection, destWidth, destHeight, False, PropertyPage.BackColor
+    
+    Obj.Picture = Picture1.Image
+    
+    End Sub
+
+' Theme File Selection ':( Move Comment inside Sub/Function/Property
+Private Sub File1_Click()
+On Error Resume Next
+If Not strPrevLoadedFile = File1.FileName Then
+    LoadThemeFile File1.path & "\" & File1.FileName, Skinimages
+    DoEvents
+    LoadButtons
+strPrevLoadedFile = File1.FileName
+File1.SetFocus
+End If
+End Sub
+
+'Load Buttons ':( Move Comment inside Sub/Function/Property
+Private Sub LoadButtons() ':( Missing Scope
+On Error GoTo err
+If UBound(Skinimages) <= 0 Then Exit Sub
+If err.Number > 0 Then
+err:
+Exit Sub
+End If
+On Error GoTo 0
+Dim A1 As Long
+Dim A2 As Long
+Dim A3 As Long
+
+    'On Error Resume Next
+    Picture3.Visible = False
+    File1.Enabled = False
+
+    'Unload Buttons (Hide The First One Because We Cant Unload It Ha Ha Ha)
+    State1(0).Visible = False
+    State3(0).Visible = False
+    State2(0).Visible = False
+    'on error Resume Next
+    If State1.Count > 1 Then
+        'For A3 = Int((UBound(SkinImages) / 3)) To State1.Count
+        For A3 = 1 To State1.Count - 1
+            Unload State1(A3)
+            Unload State2(A3)
+            Unload State3(A3)
+        Next ':( Repeat For-Variable: A3
+    End If
+    'If Skins Found
+    If UBound(Skinimages) > 0 Then
+        ' Set First Button Skin
+        State1(A2).Visible = True
+        State2(A2).Visible = True
+        State3(A2).Visible = True
+        With State1(A2)
+        .BackColor = PropertyPage.BackColor
+                State2(A2).BackColor = .BackColor
+                State3(A2).BackColor = .BackColor
+        End With
+        State2(0).Top = State1(0).Top
+        State3(0).Top = State1(0).Top
+        State2(0).Left = State1(0).Left
+        State3(0).Left = State1(0).Left
+        State1(A2).ZOrder 0
+        DrawPicture 1, State1(A2)
+        DrawPicture 2, State2(A2)
+        DrawPicture 3, State3(A2)
+        State1(0).Tag = "1"
+        'Set All Rest Button Skins
+        A2 = 0
+        For A1 = 4 To UBound(Skinimages) Step 3 ' All Images Are 3 State Buttons
+            A2 = A2 + 1
+            Load State1(A2)
+            Load State2(A2)
+            Load State3(A2)
+            State1(A2).Visible = True
+            State2(A2).Visible = True
+            State3(A2).Visible = True
+            ' Build a 4 Column Rows
+            If A2 Mod 4 = 0 Then
+                State1(A2).Top = State1(A2 - 1).Top + State1(A2 - 1).Height + 50
+                State2(A2).Top = State1(A2).Top
+                State3(A2).Top = State1(A2).Top
+                State1(A2).Left = State1(0).Left
+                State2(A2).Left = State1(A2).Left
+                State3(A2).Left = State1(A2).Left
+                ' Set Buttons Container's Height
+                If (State1(A2).Top + State1(A2).Height) > Picture3.Height Then
+                    Picture2.Height = (State1(A2).Top + State1(A2).Height) + 150
+                    VScroll1.Max = (Picture2.Height + 50) - Picture3.Height
+                Else 'NOT (STATE1(A2).TOP...
+                    Picture2.Height = Picture3.Height
+                    VScroll1.Max = 0
+                End If
+            Else 'NOT A2...
+                With State1(A2)
+                    .Top = State1(A2 - 1).Top
+                    State2(A2).Top = .Top
+                    State3(A2).Top = .Top
+                    .Left = State1(A2 - 1).Left + State1(A2 - 1).Width + 50
+                    State2(A2).Left = .Left
+                    State3(A2).Left = .Left
+                    .ZOrder 0
+                .BackColor = PropertyPage.BackColor
+                State2(A2).BackColor = .BackColor
+                State3(A2).BackColor = .BackColor
+                End With 'State1(A2)
+            End If
+                State1(A2).Tag = A1
+            DrawPicture A1, State1(A2)
+            DrawPicture A1 + 1, State2(A2)
+            DrawPicture A1 + 2, State3(A2)
+        Next ':( Repeat For-Variable: A1
+    Else ' No Theme Found 'NOT UBOUND(SKINIMAGES)...
+        'Hide Button
+        'Butt(0).Visible = False
+        State1(0).Visible = False
+        State2(0).Visible = False
+        State3(0).Visible = False
+    End If
+       
+    Picture3.Visible = True
+    File1.Enabled = True
+    
+    On Error GoTo 0
+
+End Sub
+
+
+
+Private Sub PropertyPage_Initialize()
+
+    On Error Resume Next
+    ' Load Skins Path ( It May Be App Folder , App\Themes , Last Used Folder or Default Folder of Software ( See Top )
+    PropertyPage.Caption = App.Title & " - Select Button Style!"
+    Text1.Text = GetSetting(App.Title, "Settings", "ThemePath", Text1.Text)
+    ':( Expand Structure
+    If LenB(Dir(App.path & "\*.xbn")) Then
+        Text1.Text = App.path
+    End If
+    ':( Expand Structure
+    If LenB(Dir(App.path & "\themes\*.xbn")) Then
+        Text1.Text = App.path & "\themes"
+    End If
+    If LenB(GetSetting("Infinite Buttons", "Button Themes", "Path", "")) > 0 And LenB(Dir(GetSetting("Infinite Buttons", "Button Themes", "Path", ""), vbDirectory)) Then
+        Text1.Text = GetSetting("Infinite Buttons", "Button Themes", "Path", "")
+    End If
+    File1.path = Text1.Text
+    File1.Refresh
+    ':( Expand Structure
+    
+    On Error GoTo 0
+
+End Sub
+
+
+
+
+Private Sub State1_MouseDown(Index As Integer, Button As Integer, Shift As Integer, x As Single, Y As Single)
+Dim A1  As Long
+Dim Sel As Long  ':( Move line to top of current Sub
+
+    'Dim H
+    'Dim W
+    State3(Index).ZOrder 0
+    If Button = 1 Then
+        ' Load Skin Theme From
+        Sel = Int(State1(Index).Tag)
+        ' Set Skin Buttons
+        For A1 = 0 To SelectedControls.Count - 1
+            
+            SelectedControls(A1).SetSkin Skinimages(Sel), Skinimages(Sel + 1), Skinimages(Sel + 2), "1000,300," & Int(lngX(Sel) * 15) & "," & Int(lngY(Sel) * 15) & "," & Int(lngX(Sel + 1) * 15) & "," & Int(lngY(Sel + 1) * 15) & "," & Int(lngX(Sel + 2) * 15) & "," & Int(lngY(Sel + 2) * 15), File1.ListIndex, Index, False
+        Next ':( Repeat For-Variable: A1
+    End If
+
+End Sub
+
+' Draw MouseUp Picture if Mouse is Entered ':( Move Comment inside Sub/Function/Property
+Private Sub State1_MouseMove(Index As Integer, _
+                             Button As Integer, _
+                             Shift As Integer, _
+                             x As Single, _
+                             Y As Single)
+
+State2(Index).ZOrder 0
+    
+If Not LastFocus = Index And Not LastFocus = -1 Then
+State1(LastFocus).ZOrder 0
+LastFocus = Index
+End If
+
+
+End Sub
+
+' Draw MouseUp Picture if MouseDown is Uccored ':( Move Comment inside Sub/Function/Property
+Private Sub State1_MouseUp(Index As Integer, _
+                           Button As Integer, _
+                           Shift As Integer, _
+                           x As Single, _
+                           Y As Single)
+
+    State1(Index).ZOrder 0
+
+End Sub
+
+Private Sub State2_MouseDown(Index As Integer, _
+                             Button As Integer, _
+                             Shift As Integer, _
+                             x As Single, _
+                             Y As Single)
+
+    State1_MouseDown Index, Button, Shift, x, Y
+
+End Sub
+
+Private Sub State2_MouseUp(Index As Integer, _
+                           Button As Integer, _
+                           Shift As Integer, _
+                           x As Single, _
+                           Y As Single)
+
+    State1_MouseUp Index, Button, Shift, x, Y
+
+End Sub
+
+Private Sub State3_MouseDown(Index As Integer, _
+                             Button As Integer, _
+                             Shift As Integer, _
+                             x As Single, _
+                             Y As Single)
+
+    State1_MouseDown Index, Button, Shift, x, Y
+
+End Sub
+
+Private Sub State3_MouseMove(Index As Integer, _
+                             Button As Integer, _
+                             Shift As Integer, _
+                             x As Single, _
+                             Y As Single)
+
+    State1_MouseMove Index, Button, Shift, x, Y
+
+End Sub
+
+Private Sub State3_MouseUp(Index As Integer, _
+                           Button As Integer, _
+                           Shift As Integer, _
+                           x As Single, _
+                           Y As Single)
+
+    State1_MouseUp Index, Button, Shift, x, Y
+
+End Sub
+
+Private Sub Text1_KeyUp(Keycode As Integer, _
+                        Shift As Integer)
+
+    On Error Resume Next
+    ' Set Themes Path ( See Top )
+    File1.path = Text1.Text
+    If LenB(Text1.Text) > 0 And LenB(Dir(Text1.Text & "\*.xbn")) Then
+        SaveSetting "Infinite Buttons", "Button Themes", "Path", Text1.Text
+    End If
+    On Error GoTo 0
+
+End Sub
+
+Private Sub Text4_Change()
+
+'Reload Buttons According to New Values
+
+    LoadButtons
+
+End Sub
+
+Private Sub Text5_Change()
+
+'Reload Buttons According to New Values
+
+    LoadButtons
+
+End Sub
+
+Private Sub Timer1_Timer()
+
+    On Error Resume Next
+    'Load Seleted Buttons File
+    If SelectedControls.Count <= 0 Then
+    If File1.ListCount > 0 Then File1.ListIndex = 0
+    Timer1.Enabled = False
+    Exit Sub
+    ElseIf SelectedControls.Count > 0 Then
+    Timer1.Enabled = False
+        File1.ListIndex = SelectedControls(0).theme_file_no
+        PropertyPage.Caption = App.Title & " - Theme File Selected : " & File1.FileName & " , Style Selected : " & SelectedControls(0).theme_no
+        File1_Click
+        DoEvents
+        End If
+        
+        
+        
+        On Error GoTo err ':( Avoid "GoTo"
+re:
+        DoEvents
+        If State1(SelectedControls(0).theme_no).Top + State1(SelectedControls(0).theme_no).Height > Picture3.Height Then
+            VScroll1.Value = VScroll1.Value + 100
+            GoTo re ':( Avoid "GoTo"
+        End If
+err:
+
+        On Error GoTo 0
+    
+
+End Sub
+
+Private Sub VScroll1_Change()
+
+'Scroll
+
+    Picture2.Top = -VScroll1.Value
+
+End Sub
+
+Private Sub VScroll1_Scroll()
+
+'Scroll
+
+    VScroll1_Change
+
+End Sub
+
+
